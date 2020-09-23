@@ -45,6 +45,7 @@ app.put("/config", (req, res) => {
   let body = req.body;
 
   if (!updateConfigChecker(body)) {
-    res.send("error: nothing changed");
+    res.status(400).send("error: nothing changed");
   } else res.send(config);
 });
+ 
